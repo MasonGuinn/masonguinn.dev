@@ -1,0 +1,99 @@
+/* Navbar Header Styles */
+.navbarHeader {
+    width: 100%;
+    padding: 1rem; /* py-4 and px-4 combined */
+    background-color: var(--color-background-landing); /* Use landing page background color */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    border-bottom-left-radius: 0.75rem; /* rounded-b-xl */
+    border-bottom-right-radius: 0.75rem; /* rounded-b-xl */
+    border-bottom: 4px solid var(--color-link); /* border-b-4 border-[var(--color-link)] */
+}
+
+/* Navbar Container for layout */
+.navbarContainer {
+    max-width: 1280px; /* container mx-auto equivalent */
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    align-items: center; /* items-center */
+    gap: 1rem; /* gap-4 */
+}
+
+/* Responsive grid for medium screens and up */
+@media (min-width: 768px) { /* md breakpoint */
+    .navbarContainer {
+        grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+    }
+    .navbarPlaceholder {
+        display: block; /* md:block */
+    }
+    .mainNav {
+        justify-self: center; /* justify-self-center */
+    }
+    .accountNav {
+        justify-self: end; /* md:justify-self-end */
+    }
+}
+
+/* Placeholder div for layout */
+.navbarPlaceholder {
+    display: none; /* hidden */
+}
+
+/* Navigation List (ul) styles */
+.navList {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* gap-4 */
+    list-style: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .navList {
+        gap: 2rem; /* sm:gap-8 */
+    }
+}
+
+/* NavLink Item (a) styles */
+.navLinkItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem; /* gap-1 */
+    text-align: center;
+    border-radius: 0.375rem; /* rounded-md */
+    transition: all 0.2s ease-in-out; /* transition-all duration-200 */
+    color: var(--color-text-landing); /* Use landing page text color for icons/labels */
+    font-family: var(--font-family-alt), serif; /* Use landing page font for labels */
+    text-decoration: none; /* Remove underline */
+}
+
+.navLinkItem:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+    outline-color: rgba(255, 255, 255, 0.5);
+}
+
+.navLinkItem:hover {
+    transform: scale(1.1); /* hover:scale-110 */
+}
+
+/* NavLink Icon (svg) styles */
+.navLinkIcon {
+    width: 3rem; /* w-12 */
+    height: 3rem; /* h-12 */
+}
+
+/* NavLink Label (span) styles */
+.navLinkLabel {
+    font-size: 0.75rem; /* text-xs */
+    white-space: pre-line; /* whitespace-pre-line */
+    transition: color 0.2s ease-in-out; /* transition-colors */
+}
+
+.navLinkItem:hover .navLinkLabel {
+    color: var(--color-link-hover); /* group-hover:text-[var(--color-link-hover)] */
+}
