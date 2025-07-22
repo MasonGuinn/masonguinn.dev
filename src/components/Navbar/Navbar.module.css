@@ -1,99 +1,98 @@
-/* Navbar Header Styles */
-.navbarHeader {
+/* <Header>  */
+.navbar {
+    border-top: 10px solid var(--color-border-landing);
+    background-color: transparent;
+    padding: 1.5rem 2rem; /* Add vertical padding to make the bar taller */
     width: 100%;
-    padding: 1rem; /* py-4 and px-4 combined */
-    background-color: var(--color-background-landing); /* Use landing page background color */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
-    border-bottom-left-radius: 0.75rem; /* rounded-b-xl */
-    border-bottom-right-radius: 0.75rem; /* rounded-b-xl */
-    border-bottom: 4px solid var(--color-link); /* border-b-4 border-[var(--color-link)] */
 }
 
-/* Navbar Container for layout */
-.navbarContainer {
-    max-width: 1280px; /* container mx-auto equivalent */
-    margin-left: auto;
-    margin-right: auto;
+/* <nav> */
+.navbar nav {
     display: grid;
-    grid-template-columns: 1fr; /* grid-cols-1 */
-    align-items: center; /* items-center */
-    gap: 1rem; /* gap-4 */
-}
-
-/* Responsive grid for medium screens and up */
-@media (min-width: 768px) { /* md breakpoint */
-    .navbarContainer {
-        grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
-    }
-    .navbarPlaceholder {
-        display: block; /* md:block */
-    }
-    .mainNav {
-        justify-self: center; /* justify-self-center */
-    }
-    .accountNav {
-        justify-self: end; /* md:justify-self-end */
-    }
-}
-
-/* Placeholder div for layout */
-.navbarPlaceholder {
-    display: none; /* hidden */
-}
-
-/* Navigation List (ul) styles */
-.navList {
-    display: flex;
+    grid-template-columns: 1fr auto 1fr;
+    /* grid-template-rows: repeat(2, 1fr); */
+    grid-column-gap: 0;
+    grid-row-gap: 0;
     align-items: center;
-    gap: 1rem; /* gap-4 */
-    list-style: none; /* Remove bullet points */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
 }
 
-@media (min-width: 640px) { /* sm breakpoint */
-    .navList {
-        gap: 2rem; /* sm:gap-8 */
-    }
-}
-
-/* NavLink Item (a) styles */
-.navLinkItem {
+/* <ul> (Common styles for both center and right lists) */
+/* We apply these directly to your .navListCenter and .navListRight classes */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem; /* gap-1 */
-    text-align: center;
-    border-radius: 0.375rem; /* rounded-md */
-    transition: all 0.2s ease-in-out; /* transition-all duration-200 */
-    color: var(--color-text-landing); /* Use landing page text color for icons/labels */
-    font-family: var(--font-family-alt), serif; /* Use landing page font for labels */
-    text-decoration: none; /* Remove underline */
+    gap: 20px;
 }
 
-.navLinkItem:focus {
-    outline: 2px solid white;
-    outline-offset: 2px;
-    outline-color: rgba(255, 255, 255, 0.5);
+/* UNIQUE: <ul> (specifics for center list if needed, currently none) */
+.navListCenter {
+    grid-column: 2;
+    justify-self: center;
 }
 
-.navLinkItem:hover {
-    transform: scale(1.1); /* hover:scale-110 */
+/* UNIQUE:  <ul> (specifics for right list if needed, currently none) */
+.navListRight {
+    grid-column: 3;
+    justify-self: end;
 }
 
-/* NavLink Icon (svg) styles */
+/* <li> - (No specific styles usually needed here if <a> is flex container) */
+.navbar li {
+
+}
+
+/* <a> - This is where the magic happens for vertical stacking and hover effects */
+.navbar a {
+    color: var(--color-text-landing); /* Inherits white from .navbar */
+    text-decoration: none;
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center icon and text horizontally within the link */
+    gap: 5px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover effect for links */
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly translucent white on hover */
+}
+
+/* Icon Component - No specific styles needed unless you want to override size from JSX */
 .navLinkIcon {
-    width: 3rem; /* w-12 */
-    height: 3rem; /* h-12 */
 }
 
-/* NavLink Label (span) styles */
-.navLinkLabel {
-    font-size: 0.75rem; /* text-xs */
-    white-space: pre-line; /* whitespace-pre-line */
-    transition: color 0.2s ease-in-out; /* transition-colors */
+/* <span> - The text label under the icon */
+.navbar span {
+    font-size: 0.9em;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
-.navLinkItem:hover .navLinkLabel {
-    color: var(--color-link-hover); /* group-hover:text-[var(--color-link-hover)] */
+/* Mobile-specific styles */
+@media screen and (max-width: 980px) {
+    .navbar {
+        padding: 1rem 1rem;
+    }
+
+    .navbar nav {
+        grid-template-rows: auto auto;
+        justify-self: center;
+    }
+
+    .navListRight {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: center;
+    }
+    .navbar ul {
+        gap: 20px;
+    }
+
+    .navbar a {
+        padding: 8px 10px;
+    }
 }

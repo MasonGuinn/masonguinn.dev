@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import 'node_modules/modern-normalize/modern-normalize.css';
 
 :root {
   /* Global non-theme-dependent variables */
@@ -10,23 +9,16 @@
   font-family: var(--font-family-default), serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color-scheme: light dark;
-}
 
-/* Light Theme (Default) */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-text-landing: white;
-    --color-background-landing: #0A001B;
-    --color-border-landing: #2B69FB;
-
-    --color-text: #0A001B;
-    --color-background: white;
-    --color-link-hover: black;
-    --color-link: '#2B69FB';
-  }
+  /* Default Theme (Light Theme) */
+  --color-text-landing: white;
+  --color-background-landing: #0A001B;
+  --color-border-landing: #2B69FB;
+  --color-text: #0A001B;
+  --color-background: white;
+  --color-link-hover: black;
+  --color-link: '#2B69FB';
 }
 
 /* Dark Theme */
@@ -36,3 +28,50 @@
   }
 }
 
+/* CSS RESET */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* 10. Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}

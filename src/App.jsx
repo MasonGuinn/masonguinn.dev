@@ -1,12 +1,18 @@
+import './styles/app.css'
 import Navbar from "./components/Navbar/Navbar.jsx";
+import Hero from "./components/Hero/Hero.jsx";
+
 
 function App() {
 
   return (
     <>
-        <main>
+        <div className="landing-page">
             <Navbar />
-        </main>
+            <main>
+                <Hero />
+            </main>
+        </div>
     </>
   )
 }
