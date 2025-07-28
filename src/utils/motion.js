@@ -108,3 +108,24 @@ export const textVariant = {
         },
     },
 };
+
+export const navLinkVariants = {
+    hover: {
+        // You can add animations for the link itself here if you want
+    },
+};
+
+export const underlineVariants = {
+    rest: {
+        scaleX: 0,
+        originX: 0, // Animate from the left
+    },
+    hover: {
+        scaleX: 1,
+        originX: 0,
+        transition: {
+            duration: 0.3,
+            ease: 'easeIn',
+        },
+    },
+};

@@ -7,7 +7,7 @@ import {TypingText} from "../TypingText/TypingText.jsx";
 export default function Hero() {
     return (
         <section className={styles.heroContainer}>
-            <motion.div className={styles.heroTextContainer} variants={containerVariants} initial="hidden" whileInView="show" viewport={{ amount: 0.25 }} >
+            <motion.div className={styles.heroTextContainer} variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} >
                 <motion.h2 variants={itemVariants}>Hi my name is...</motion.h2>
                 <motion.h1 variants={itemVariants}>Mason Guinn</motion.h1>
                 <motion.div variants={itemVariants}>
