@@ -1,0 +1,27 @@
+*** ANIMATION EXAMPLES ***
+
+*** Fade In Animation Example **
+<motion.div className={styles.heroTextContainer} variants={fadeIn('down')} initial="hidden" whileInView="show" viewport={{ amount: 0.25 }} >
+</motion.div>
+
+
+*** Stagger Animation Example **
+<motion.div className={styles.heroTextContainer} variants={containerVariants} initial="hidden" whileInView="show" viewport={{ amount: 0.25 }} >
+                <motion.h2 variants={itemVariants}>Hi my name is...</motion.h2>
+                <motion.h1 variants={itemVariants}>Mason Guinn</motion.h1>
+                <motion.p variants={itemVariants}>a cybersecurity student based in Pasco, Washington
+</motion.div>
+
+*** Zoom in Animation Example **
+<motion.div variants={zoomIn(0.3, 1)} // delay, duration initial="hidden" whileInView="show">
+Content to zoom in
+</motion.div>
+
+*** Slide In Animation Example **
+<motion.section variants={slideIn('left', 'tween', 0.2, 1)} // direction, type, delay, duration initial="hidden" whileInView="show">
+  A whole section sliding in!
+</motion.section>
+
+*** Typing Text Animation Example **
+<TypingText as="h1" text="Hi my name is..." speed={} textStyles={styles.heroSubtext} />
+<TypingText as="p" text="Mason Guinn" textStyles={styles.heroHeading} />
