@@ -1,21 +1,18 @@
 import React from 'react';
 import styles from './Hero.module.css';
-import laptopImage from 'src/assets/HeroImage.png';
 
 export default function Hero() {
     return (
-        <div className={styles.heroContainer}>
-            <div className={styles.heroText}>
-                <h1 className={styles.heroTitle}>Mason Guinn</h1>
-                <p className={styles.heroSubtitle}>Full-Stack Developer & Digital Artist</p>
-                <div className={styles.heroButtons}>
-                    <a href="#code" className={styles.ctaButton}>View My Work</a>
-                    <a href="#contact" className={`${styles.ctaButton} ${styles.secondaryButton}`}>Get In Touch</a>
-                </div>
+        <section className={styles.heroContainer}>
+            <div className={styles.heroTextContainer}>
+                <h2>Hi my name is...</h2>
+                <h1>Mason Guinn</h1>
+                <p>a cybersecurity student based in Pasco, Washington
+                    I have worked on a wide range of front-end projects, from DJ applications to eCommerce
+                    booking platforms, with a focus on creating clean, well-crafted interfaces that not only look
+                    great but also provide a seamless user experience.
+                </p>
             </div>
-            <div className={styles.heroImageContainer}>
-                <img src={laptopImage} alt="A laptop displaying code" className={styles.heroImage} />
-            </div>
-        </div>
+        </section>
     );
 }

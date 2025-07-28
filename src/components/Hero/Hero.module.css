@@ -1,33 +1,42 @@
 .heroContainer {
-
+    display: flex;
+    justify-content: center; /* Alight text block to the left */
+    align-items: center; /* Vertically center the text block */
+    min-height: 100vh; /* Ensure it takes up sufficient viewport height */
+    position: relative; /* Establishes positioning context for the absolutely positioned image */
+    overflow: hidden; /* Hides any overflow */
 }
 
-.heroText {
-
+.heroTextContainer {
+    flex-grow: 1; /* Allows text content to take up available space */
+    max-width: 60%; /* Limit its width so the image has room on the right */
+    padding-right: 20px; /* Space between text and left of image */
+    z-index: 1; /* Ensures text is above the image */
 }
 
-.heroTitle {
-
+/* Hi my name is... */
+.heroTextContainer h2 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    margin-bottom: 0.5rem;
 }
 
-.heroSubtitle {
-
+/* Mason Guinn */
+.heroTextContainer h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height:  1.1;
+    margin-bottom: 0.2em;
 }
 
-.heroButtons {
-
+.heroTextContainer p {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    line-height:  1.6;
+    margin-top: 1.5rem;
 }
 
-.ctaButton {
-
+@media (max-width: 768px) { /* Adjust this breakpoint as needed */
+    .heroContainer {
+        flex-direction: column; /* Stack content vertically on small screens */
+        justify-content: flex-start; /* Align stacked content to the top */
+        padding-top: 40px;
+    }
 }
-
-.secondaryButton {
-
-}
-
-.heroImageContainer {
-
-}
-
-.heroImage {
