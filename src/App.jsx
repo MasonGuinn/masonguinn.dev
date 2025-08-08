@@ -2,6 +2,8 @@ import './styles/app.css'
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import Projects from "./components/Projects/Projects.jsx";
+import Divider from './assets/Divider.svg?react';
+import React from "react";
 
 
 function App() {
@@ -10,11 +12,12 @@ function App() {
     <>
         <div className="landing-page">
             <Navbar />
-            <main>
-                <Hero />
-                <Projects />
-            </main>
+            <Hero />
         </div>
+        <main>
+            <Divider className="heroDivider" />
+            <Projects />
+        </main>
     </>
   )
 }

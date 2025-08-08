@@ -1,4 +1,24 @@
 .projectsContainer {
-    margin-top: 20rem;
-    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.projectsContainer h2 {
+    color: black;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.projectsContainer p {
+    color: black;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }

@@ -9,7 +9,17 @@
     font-family: var(--font-family-alt), serif;
 }
 
-.landing-page main {
+.heroDivider {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+main {
+    position: relative;
+    background-color: var(--color-background);
     display: flex;
     flex-direction: column;
     justify-content: center;
